@@ -204,7 +204,7 @@ constexpr uint8_t epps = ENCODER_PULSES_PER_STEP;
     screen_timeout_millis = sleep_timeout_minutes ? millis() + sleep_timeout_minutes * 60UL * 1000UL : 0;
     sleep_display(false);
   }
-  void MarlinUI::sleep_display(const bool sleep) {} // if unimplemented
+  
   #if !HAS_TOUCH_SLEEP && !HAS_MARLINUI_U8GLIB // without DOGM (COLOR_UI)
     void MarlinUI::sleep_display(const bool sleep) {} // if unimplemented
   #endif
@@ -833,7 +833,7 @@ void MarlinUI::init() {
           // Apply a linear offset to a single axis
           if (axis == ALL_AXES_ENUM)
             destination = all_axes_destination;
-          else if (axis <= LOGICAL_AXES) {
+          else if (axis <= XYZE) {
             destination = current_position;
             destination[axis] += offset;
           }

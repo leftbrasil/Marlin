@@ -155,7 +155,7 @@
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
 //#define SERIAL_PORT_3 1
-//#define BAUDRATE_3 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+//#define BAUDRATE_3 115200   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -1301,7 +1301,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 1100 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1318,8 +1318,8 @@
  *   M204 I    Angular Acceleration
  *   M204 J    Angular Travel Acceleration
  */
-#define DEFAULT_ACCELERATION                  1500  // X, Y, Z ... and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION          1000  // E acceleration for retracts
+#define DEFAULT_ACCELERATION                  1000  // X, Y, Z ... and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION          1200  // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION           1000  // X, Y, Z ... acceleration for travel (non printing) moves
 #if ENABLED(AXIS4_ROTATES)
   #define DEFAULT_ANGULAR_ACCELERATION        3000  // I, J, K acceleration for rotational-only printing moves
@@ -2074,7 +2074,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for G26.
@@ -2159,7 +2159,7 @@
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
   #define LCD_PROBE_Z_RANGE 4     // (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment
-  //#define MESH_EDIT_MENU        // Add a menu to edit mesh points
+  #define MESH_EDIT_MENU        // Add a menu to edit mesh points
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
@@ -2170,7 +2170,7 @@
   #define BED_TRAMMING_HEIGHT      0.2        // (mm) Z height of nozzle at leveling points
   #define BED_TRAMMING_Z_HOP       2          // (mm) Z height of nozzle between leveling points
   #define BED_TRAMMING_INCLUDE_CENTER         // Move to the center after the last corner
-  //#define BED_TRAMMING_USE_PROBE
+  #define BED_TRAMMING_USE_PROBE
   #if ENABLED(BED_TRAMMING_USE_PROBE)
     #define BED_TRAMMING_PROBE_TOLERANCE 0.1  // (mm)
     #define BED_TRAMMING_VERIFY_RAISED        // After adjustment triggers the probe, re-probe to verify
@@ -3286,8 +3286,8 @@
  *   root of your SD card, together with the compiled firmware.
  */
 //#define TFT_CLASSIC_UI
-//#define TFT_COLOR_UI
-#define TFT_LVGL_UI
+#define TFT_COLOR_UI
+//#define TFT_LVGL_UI
 
 #if ENABLED(TFT_COLOR_UI)
   /**
