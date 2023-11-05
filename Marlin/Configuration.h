@@ -1294,7 +1294,7 @@
   #ifdef IS_2D
     #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415, 415 }
   #else
-    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 82, 411, 420 }
+    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 82, 468, 420 }
   #endif
 #else
   #ifdef IS_2D
