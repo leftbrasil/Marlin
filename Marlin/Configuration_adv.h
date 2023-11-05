@@ -22,7 +22,7 @@
 #pragma once
 
 #define CONFIG_EXAMPLES_DIR "Elegoo/Neptune 2"
-
+#define TIMER_SERIAL TIM4
 /**
  * Configuration_adv.h
  *
